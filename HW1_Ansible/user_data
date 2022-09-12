@@ -1,0 +1,12 @@
+#!/bin/bash
+sed 's/PasswordAuthentication no/PasswordAuthentication yes/' -i /etc/ssh/sshd_config
+systemctl restart sshd
+service sshd restart
+sudo apt-get update 
+sudo apt-get upgrade --yes
+sudo apt-get install ansible --yes
+sudo apt-get install openssh-server openssh-client
+sudo apt-get install net-tools
+mkdir -p /etc/ansible/
+touch /etc/ansible/hosts
+echo -e "badpass\nbadpass" | sudo passwd ubuntu

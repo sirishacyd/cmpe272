@@ -1,0 +1,40 @@
+- hosts: apache
+  tasks:
+    - name: install apache2
+      apt: name=apache2 update_cache=yes state=latest
+      become: yes
+    - name: enabled mod_rewrite
+      apache2_module: name=rewrite state=present
+      become: yes
+      notify:
+        - restart apache2
+    - name: copy index page for vms
+      ansible.builtin.copy:
+        content: |
+          <html>
+          <head>
+            <title>Hello World.</title>
+          </head>
+          <body>
+            <h1> Hello World. Welcome to SJSU - {{ansible_vmname}}</h1>
+          </body>
+          </html>
+        dest: /var/www/html/index.html
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
+      become: yes
+    - name: configure apache2 to listen on port 8080
+      lineinfile: dest=/etc/apache2/ports.conf regexp="^Listen 80" line="Listen 8080" state=present
+      become: yes
+      notify:
+        - restart apache2
+    - name: configure apache2 virtualhost on port 8080
+      lineinfile: dest=/etc/apache2/sites-available/000-default.conf regexp="^<VirtualHost \*:80>" line="<VirtualHost *:8080>" state=present
+      become: yes
+      notify:
+        - restart apache2
+  handlers:
+    - name: restart apache2
+      become: yes
+      service: name=apache2 state=restarted
