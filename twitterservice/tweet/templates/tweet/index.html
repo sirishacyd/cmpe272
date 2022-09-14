@@ -1,0 +1,30 @@
+<h1>Twitter Service</h1>
+<form method="post" action=".">
+    {% csrf_token %}
+    <h1>enter the text that you want to tweet:</h1>
+    <input type="text" name="content"><br>
+    <button>Submit</button>
+</form>
+<form method="post" action=".">
+    {% csrf_token %}
+    <h1>enter the id of tweet that you want to delete:</h1>
+    <input type="text" name="delete_id"><br>
+    <button>delete</button>
+</form>
+<form method="post" action=".">
+    {% csrf_token %}
+    <h1>enter the handle that you want to retrieve tweets for:</h1>
+    <input type="text" name="twitter_handle"><br>
+    <button>retrieve</button>
+    {% if messages %}
+        {% for tweet in public_tweets %}
+        <h4>{{ tweet }}</h4>
+        {% endfor %}
+        {% for i in messages %}
+         <div class="alert alert--{{i.tags}}">
+             <h4>{{i}}</h4>
+             <button  class="alert__close">x</button>
+         </div>
+        {% endfor %}
+    {% endif %}
+</form>
