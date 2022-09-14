@@ -70,7 +70,7 @@ def index(request):
         if content:
             print ('Content:', content)
             tweet_id, message=create_tweet(content)
-            messages.success(request,'twitter link : https://twitter.com/sirishacyd/status/'+tweet_id+' Message: '+message)
+            messages.success(request,'twitter link : https://twitter.com/sirishacyd/status/'+str(tweet_id)+' Message:'+message)
             return render(request, 'tweet/index.html')
         elif twitter_handle:
             print ('Twitter Handle:', twitter_handle)
