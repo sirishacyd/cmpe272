@@ -1,0 +1,76 @@
+{
+  "resources": [
+    {
+      "name": "handle_object_created_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::ACCOUNT_ID:role/media-query-dev-handle_object_created",
+      "role_name": "media-query-dev-handle_object_created"
+    },
+    {
+      "name": "handle_object_created",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-west-1:ACCOUNT_ID:function:media-query-dev-handle_object_created"
+    },
+    {
+      "name": "handle_object_created-s3event",
+      "resource_type": "s3_event",
+      "bucket": "media-query-mediabucket-ebbbzfrtyo1l",
+      "lambda_arn": "arn:aws:lambda:us-west-1:ACCOUNT_ID:function:media-query-dev-handle_object_created"
+    },
+    {
+      "name": "handle_object_removed_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::ACCOUNT_ID:role/media-query-dev-handle_object_removed",
+      "role_name": "media-query-dev-handle_object_removed"
+    },
+    {
+      "name": "handle_object_removed",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-west-1:ACCOUNT_ID:function:media-query-dev-handle_object_removed"
+    },
+    {
+      "name": "handle_object_removed-s3event",
+      "resource_type": "s3_event",
+      "bucket": "media-query-mediabucket-ebbbzfrtyo1l",
+      "lambda_arn": "arn:aws:lambda:us-west-1:ACCOUNT_ID:function:media-query-dev-handle_object_removed"
+    },
+    {
+      "name": "add_video_file_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::ACCOUNT_ID:role/media-query-dev-add_video_file",
+      "role_name": "media-query-dev-add_video_file"
+    },
+    {
+      "name": "add_video_file",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-west-1:ACCOUNT_ID:function:media-query-dev-add_video_file"
+    },
+    {
+      "name": "add_video_file-sns-subscription",
+      "resource_type": "sns_event",
+      "topic": "media-query-VideoTopic-upUen582KLJU",
+      "lambda_arn": "arn:aws:lambda:us-west-1:ACCOUNT_ID:function:media-query-dev-add_video_file",
+      "subscription_arn": "arn:aws:sns:us-west-1:ACCOUNT_ID:media-query-VideoTopic-upUen582KLJU:044ea730-b33c-43ca-9d4c-f115cbf676c5",
+      "topic_arn": "arn:aws:sns:us-west-1:ACCOUNT_ID:media-query-VideoTopic-upUen582KLJU"
+    },
+    {
+      "name": "api_handler_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::ACCOUNT_ID:role/media-query-dev-api_handler",
+      "role_name": "media-query-dev-api_handler"
+    },
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-west-1:ACCOUNT_ID:function:media-query-dev"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "xneb9fqgq9",
+      "rest_api_url": "https://xneb9fqgq9.execute-api.us-west-1.amazonaws.com/api/"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}

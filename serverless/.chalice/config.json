@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "app_name": "media-query",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api",
+      "autogen_policy": false,
+      "environment_variables": {
+        "MEDIA_TABLE_NAME": "media-query-MediaTable-VHR53O8Z9MN7",
+        "MEDIA_BUCKET_NAME": "media-query-mediabucket-ebbbzfrtyo1l",
+        "VIDEO_TOPIC_NAME": "media-query-VideoTopic-upUen582KLJU",
+        "VIDEO_ROLE_ARN": "arn:aws:iam::ACCOUNT_ID:role/media-query-VideoRole-CWW69NRIZB3S",
+        "VIDEO_TOPIC_ARN": "arn:aws:sns:us-west-1:ACCOUNT_ID:media-query-VideoTopic-upUen582KLJU"
+      }
+    }
+  }
+}
