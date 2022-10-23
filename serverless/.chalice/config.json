@@ -6,11 +6,11 @@
       "api_gateway_stage": "api",
       "autogen_policy": false,
       "environment_variables": {
-        "MEDIA_TABLE_NAME": "media-query-MediaTable-VHR53O8Z9MN7",
-        "MEDIA_BUCKET_NAME": "media-query-mediabucket-ebbbzfrtyo1l",
-        "VIDEO_TOPIC_NAME": "media-query-VideoTopic-upUen582KLJU",
-        "VIDEO_ROLE_ARN": "arn:aws:iam::ACCOUNT_ID:role/media-query-VideoRole-CWW69NRIZB3S",
-        "VIDEO_TOPIC_ARN": "arn:aws:sns:us-west-1:ACCOUNT_ID:media-query-VideoTopic-upUen582KLJU"
+        "MEDIA_TABLE_NAME": "media-query-MediaTable-1MA684L2ERFBP",
+        "MEDIA_BUCKET_NAME": "media-query-mediabucket-153cr0yia9hmy",
+        "VIDEO_TOPIC_NAME": "media-query-VideoTopic-Qzz9ocJbN1sF",
+        "VIDEO_ROLE_ARN": "arn:aws:iam::649038442439:role/media-query-VideoRole-1DZJKUJD0E8IE",
+        "VIDEO_TOPIC_ARN": "arn:aws:sns:us-west-1:649038442439:media-query-VideoTopic-Qzz9ocJbN1sF"
       }
     }
   }
